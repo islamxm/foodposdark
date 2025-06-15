@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 13px 0;
+  cursor: pointer;
+  transition: all .2s ease;
+
+  &:hover {
+    color: var(--accents---orange);
+  }
+}
+.wrapper.active {
+  color: var(--accents---orange);
+}

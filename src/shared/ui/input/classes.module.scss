@@ -1,0 +1,27 @@
+.wrapper {
+
+  input {
+    padding: 14px;
+    border-radius: 8px;
+    color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--base-dark-line);
+    background-color: var(--base-form-bg);
+
+    &::placeholder {
+      color: var(--text-light);
+    }
+    &:focus {
+      border-color: var(--white);
+    }
+  }
+}
+.wrapper.error {
+
+}
+.wrapper.success {
+
+}
+.wrapper.loading {
+
+}

@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+  padding: 24px 0;
+
+  .activeBar {
+    border-radius: 12px 0 0 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80px;
+    width: 92px;
+    background-color: var(--base---dark-bg-1);
+    opacity: 1;
+    transition: all .2s ease;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: -1px;
+      background-image: url('/src/assets/other/menu-active-bar-top.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 13px;
+      height: 12px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: 0;
+      background-image: url('/src/assets/other/menu-active-bar-bottom.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .activeBar.show {
+    opacity: 1;
+  }
+}

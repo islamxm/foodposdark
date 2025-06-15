@@ -1,0 +1,52 @@
+.wrapper {
+  border-radius: 16px;
+  background-color: var(--base-dark-bg-2);
+  max-width: 192px;
+  width: 100%;
+  display: block;
+
+  &:hover {
+    .body {
+      .title {
+      color: var(--primary-color) !important;
+    }
+    }
+  }
+  
+  .img {
+    position: relative;
+    width: calc(100% - 60px);
+    padding-bottom: calc(100% - 60px);
+    transform: translateY(-30px);
+    position: relative;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    
+    .img_el {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .body {
+  padding: 0 24px 24px 24px;
+    .title, .price, .available {
+      font-size: 14px;
+      line-height: 130%;
+    }
+
+    .title {
+      max-height: 37px;
+      height: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+}

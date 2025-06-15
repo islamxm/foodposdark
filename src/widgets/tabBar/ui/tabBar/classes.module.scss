@@ -1,0 +1,15 @@
+.wrapper {
+  position: relative;
+  border-bottom: 1px solid var(--base-dark-line);
+
+  .line {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-color: var(--primary-color);
+    height: 3px;
+    width: 0;
+    transition: all .2s ease;
+    border-radius: 10px;
+  }
+}

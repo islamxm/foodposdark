@@ -1,0 +1,36 @@
+* {
+  outline: none;
+}
+body {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  background-color: var(--base---dark-bg-1);
+  overflow-x: hidden;
+}
+
+[class^="ant-"],
+[class*=" ant-"] {
+  font-family: 'Barlow', sans-serif !important;
+}
+
+
+.component-border {
+  border: 1px dashed #fff;
+}
+
+.def-transition {
+  transition: all .2s ease;
+}
+
+a {
+  transition: all .2s ease;
+  color: var(--white);
+  &:hover {
+    color: var(--primary-color);
+  }
+}
