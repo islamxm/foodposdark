@@ -1,1 +1,1 @@
-export { OrderType } from './model/types'
+export { type OrderType } from './model/types'

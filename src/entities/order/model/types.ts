@@ -1,12 +1,18 @@
 export type OrderType = 'Dine In' | 'To Go' | 'Delivery'
 export type Order = {
+  userId: number
   productId: number,
-  count: number,
+  qunatity: number,
+  status: OrderStatus,
+  totalPayment: number
 }
+
 export type Orders = {
   id: number,
   data: Array<Order>
 }
+
+export type OrderStatus = 'completed' | 'preparing' | 'pending' | 'canceled'
 
 export type PaymentMethod = 'credit-card' | 'paypal' | 'cash'
 
