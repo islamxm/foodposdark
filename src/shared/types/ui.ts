@@ -38,3 +38,11 @@ export type StyleVarsObj = Record< ColorVars, {key: string, value: string}>
 export type HAlign = 'left' | 'right' | 'center'
 
 export type Status = 'loading' | 'success' | 'error'
+
+export type IconProps = {
+  width: number,
+  height: number,
+  fill: string,
+  stroke: string
+  className: string
+}

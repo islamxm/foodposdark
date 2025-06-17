@@ -1,0 +1,31 @@
+.wrapper {
+  padding: 14px 35px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+
+  .extra {
+
+  }
+  .main {
+    text-align: center;
+  }
+  .before {
+
+  }
+  .after {
+
+  }
+}
+
+.wrapper.fill {
+  width: 100%;
+}
+
+.wrapper.outlined {
+
+}
+.wrapper.solid {
+  background-color: var(--primary-color)
+}

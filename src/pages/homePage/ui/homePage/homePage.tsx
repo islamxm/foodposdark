@@ -8,6 +8,7 @@ import { ProductList } from '@/widgets/productList';
 import { tabsListMock, productListMock } from '../../model/mock';
 import { HomePageContentHead } from '../homePageContentHead/homePageContentHead';
 import { SearchProduct } from '@/features/common/searchProduct';
+import { OrderTypeSelect } from '@/features/common/orderTypeSelect';
 
 export const HomePage: FC = () => {
   const [activeTab, setActiveTab] = useState<TabContextValueType['activeTab']>(1)
@@ -33,9 +34,7 @@ export const HomePage: FC = () => {
         <Col span={24}>
           <HomePageContentHead 
             title='Choose Dishes' 
-            extra={<>
-              
-            </>}
+            extra={<OrderTypeSelect/>}
             />
         </Col>
         <Col span={24}>

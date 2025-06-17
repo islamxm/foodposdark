@@ -1,4 +1,15 @@
 .wrapper {
-  .header {}
-  .content {padding: 24px;}
+  display: flex;
+
+  .main {
+
+    .header {}
+    .content {padding: 24px;}
+  }
+  .extra {
+    flex: 0 0 auto;
+  }
+  .extra.fullWindowHeight {
+    height: 100vh;
+  }
 }

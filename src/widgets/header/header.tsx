@@ -18,7 +18,7 @@ export const Header:FC<Props> = ({
   extra
 }) => {
   return(
-    <Flex gap={5} className={classNames([classes.header])}>
+    <Flex gap={5} justify={'space-between'} className={classNames([classes.header])}>
       <div className={classes.main}>
         <Row gutter={4}>
           {title && <Col span={24}><Title>{title}</Title></Col>}
