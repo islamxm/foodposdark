@@ -9,12 +9,19 @@
   cursor: pointer;
 
   input {
+    width: 100%;
     color: var(--white);
 
     &::placeholder {
       color: var(--text-light);
     }
   }
+
+}
+
+.wrapper.nonEditable {
+  pointer-events: none;
+  touch-action: none;
 }
 
 .wrapper {
@@ -24,9 +31,11 @@
     align-items: center;
     justify-content: center;
   }
+
   .extra.before {
     margin-right: 8px;
   }
+
   .extra.after {
     margin-left: 8px;
   }

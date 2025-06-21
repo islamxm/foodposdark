@@ -4,6 +4,11 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+  border: 1px solid var(--primary-color);
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   .extra {
 
@@ -24,8 +29,27 @@
 }
 
 .wrapper.outlined {
+  background-color: none;
+  color: var(--primary-color);
 
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }
 }
 .wrapper.solid {
   background-color: var(--primary-color)
+}
+
+.wrapper.icon {
+  .iconContent {
+    
+  }
+}
+
+.wrapper.icon {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

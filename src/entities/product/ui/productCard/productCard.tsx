@@ -14,7 +14,7 @@ export const ProductCard:FC<Product> = ({
   thumbnail,
   price
 }) => {
-  useEffect(() => console.log(title), [title])
+
   return(
     <Link to={'#'} className={classes.wrapper}>
       <div className={classNames([classes.img])}>

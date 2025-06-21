@@ -2,13 +2,21 @@
   display: flex;
 
   .main {
+    height: 100vh;
 
-    .header {}
-    .content {padding: 24px;}
+    .header {
+      
+    }
+
+    .content {
+      padding: 24px;
+    }
   }
+
   .extra {
     flex: 0 0 auto;
   }
+
   .extra.fullWindowHeight {
     height: 100vh;
   }

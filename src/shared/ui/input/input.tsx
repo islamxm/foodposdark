@@ -8,7 +8,8 @@ import useInput from '@/shared/lib/hook/useInput';
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   status?: Status,
   before?: ReactNode
-  after?: ReactNode
+  after?: ReactNode,
+  nonEditable?: boolean
 }
 
 const Input: FC<Props> = ({
@@ -16,6 +17,7 @@ const Input: FC<Props> = ({
   type,
   before,
   after,
+  nonEditable,
   ...props
 }) => {
   const {
@@ -33,7 +35,8 @@ const Input: FC<Props> = ({
         classes.wrapper,
         globalCls.defTransition,
         status && classes[status],
-        focused && classes.focused
+        focused && classes.focused,
+        nonEditable && classes.nonEditable,
       ])}>
       {before &&
         <div className={classNames([classes.extra, classes.before])}>{before}</div>}
@@ -41,14 +44,10 @@ const Input: FC<Props> = ({
         ref={ref}
         onBlur={focusOff}
         onFocus={focusOn}
-        className={classNames([
-          props.className,
-          
-        ])}
         {...props}
       />
       {after &&
-      <div className={classNames([classes.extra, classes.after])}>{after}</div>}
+        <div className={classNames([classes.extra, classes.after])}>{after}</div>}
     </label>
   )
 }

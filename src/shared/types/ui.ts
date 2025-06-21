@@ -46,3 +46,5 @@ export type IconProps = {
   stroke: string
   className: string
 }
+
+export type BaseSize = 'sm' | 'md' | 'lg'

@@ -9,7 +9,7 @@ body {
   color: var(--white);
   width: 100%;
   height: 100%;
-  background-color: var(--base---dark-bg-1);
+  background-color: var(--base-dark-bg-1);
   overflow-x: hidden;
 }
 
@@ -26,6 +26,35 @@ body {
 .def-transition {
   transition: all .2s ease;
 }
+
+.block-feature {
+  box-shadow: 0px 0px 0px 2px solid blue;
+}
+.block-widget {
+  box-shadow: inset 0px 0px 0px 1px green;
+}
+.block-entity {
+  box-shadow: inset 0px 0px 0px 1px yellow;
+}
+
+.custom-scroll {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-button {}
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--base-dark-line);
+    border-radius: 8px;
+  }
+}
+
 
 
 a {

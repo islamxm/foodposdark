@@ -1,0 +1,29 @@
+.wrapper {
+  .top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    
+    .order {}
+    .quantity,.price {
+      flex: 0 0 auto;
+    }
+    .quantity {
+      width: 48px;
+    }
+    .price {
+      width: 48px;
+    }
+  }
+  
+  .bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .note {
+      width: 100%;
+    }
+    .action {}
+  }
+}

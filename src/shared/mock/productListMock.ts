@@ -1,5 +1,4 @@
-import { Product } from "@/entities/product/model/types";
-import { TabItemProps } from "@/widgets/tabBar/types";
+import { Product } from "@/entities/product/model/types"
 import bowl1 from '@/assets/images/bowl 1.png'
 import bowl2 from '@/assets/images/bowl 2.png'
 
@@ -42,10 +41,4 @@ export const productListMock: Array<Product> = [
       availableUnit: 'bowls'
     }
   }
-]
-
-export const tabsListMock: Array<TabItemProps> = [
-  {id: 1, title: 'Hot Dishes'},
-  {id: 2, title: 'Cold Dishes'},
-  {id: 3, title: 'Soup'},
 ]

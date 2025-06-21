@@ -1,10 +1,15 @@
+import { Qunatity } from "@/shared/types/global"
+import { Product } from '@/entities/product/@x/order'
 export type OrderType = 'Dine In' | 'To Go' | 'Delivery'
+
 export type Order = {
   userId: number
-  productId: number,
-  qunatity: number,
-  status: OrderStatus,
-  totalPayment: number
+  product: Pick<Product, 'id' | 'price' | 'title' | 'thumbnail'>
+  qunatity: Qunatity
+  status: OrderStatus
+  type: OrderType
+  totalPayment: number,
+  orderNote?: string
 }
 
 export type Orders = {
@@ -18,7 +23,7 @@ export type PaymentMethod = 'credit-card' | 'paypal' | 'cash'
 
 export type PaymentBase = {
   orderType: OrderType,
-  tableNo: number  
+  tableNo: number
 }
 
 export type PaymentCreditCard = PaymentBase & {
@@ -39,6 +44,3 @@ export type PaymentCash = PaymentBase & {
 }
 
 export type Payment = PaymentCreditCard | PaymentPaypal | PaymentCash
-
-
-

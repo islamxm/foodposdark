@@ -3,7 +3,7 @@ import classes from './classes.module.scss'
 import Select from '@/shared/ui/select/select';
 import { OrderType } from '@/entities/order';
 import { classNames } from '@/shared/lib/classNames';
-import useOrderTypeSelect from '../lib/useOrderTypeSelect';
+import useOrderTypeSelect from '../../lib/useOrderTypeSelect';
 
 type Props = {
   defaultValue: OrderType
@@ -22,7 +22,6 @@ export const OrderTypeSelect:FC<Props> = ({
         className={classNames([
           classes.select
         ])}
-        // open
         />
     </div>
   )

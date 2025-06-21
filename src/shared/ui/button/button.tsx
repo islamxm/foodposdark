@@ -1,43 +1,83 @@
 import { classNames } from "@/shared/lib/classNames";
 import { StyleVariants } from "@/shared/types/ui";
-import { FC, HTMLProps, PropsWithChildren, ReactNode } from "react";
+import { FC, HTMLProps, PropsWithChildren, ReactNode, useEffect } from "react";
 import classes from './classes.module.scss'
 import { FlexProps } from "antd";
 import globalCls from "@/shared/const/classes";
 
-type Props = PropsWithChildren<HTMLProps<HTMLButtonElement>> & {
+type BaseButtonProps = {
   type?: 'submit' | 'reset' | 'button'
-  styleVariant: Extract<StyleVariants, 'solid' | 'outlined'>
+  isLoading?: boolean
+}
+
+type DefaultButtonProps = BaseButtonProps & PropsWithChildren<HTMLProps<HTMLButtonElement>> & {
+  isIcon?: false
+  styleVariant?: Extract<StyleVariants, 'solid' | 'outlined'>
   before?: ReactNode
   after?: ReactNode,
   justify?: FlexProps['justify']
   isFill?: boolean
 }
+type IconButtonProps = BaseButtonProps & HTMLProps<HTMLButtonElement> & {
+  isIcon: true,
+  icon: ReactNode,
+  iconSize?: number
+  styleVariant?: Extract<StyleVariants, 'solid' | 'outlined'>
+}
 
-const Button:FC<Props> = ({
-  children,
-  styleVariant = 'solid',
-  after,
-  before,
-  justify = 'center',
-  isFill,
-  ...props
-}) => {
+type ButtonProps = DefaultButtonProps | IconButtonProps
+
+
+const Button: FC<ButtonProps> = (props) => {
+  
+  if (!props.isIcon) {
+    const {
+      isFill,
+      styleVariant,
+      justify,
+      before,
+      after,
+      children,
+    } = props
+
+    return (
+      <button
+        className={classNames([
+          classes.wrapper,
+          classes[styleVariant || 'solid'],
+          globalCls.defTransition,
+          isFill && classes.fill,
+          props.className
+        ])}
+        style={{ ...props.style, justifyContent: justify }}
+        {...props}
+      >
+        {before && <div className={classNames([classes.extra, classes.before])}>{before}</div>}
+        <div className={classes.main}>{children}</div>
+        {after && <div className={classNames([classes.extra, classes.after])}>{after}</div>}
+      </button>
+    )
+  }
+
+  const {
+    styleVariant,
+    icon,
+    iconSize = 48
+  } = props
+  
   return (
     <button
       className={classNames([
         classes.wrapper,
-        classes[styleVariant],
+        classes[styleVariant || 'solid'],
         globalCls.defTransition,
-        isFill && classes.fill,
+        classes.icon,
         props.className
       ])}
-      style={{...props.style, justifyContent: justify}}
+      style={{...props.style, height: iconSize, width: iconSize}}
       {...props}
-      >
-      {before && <div className={classNames([classes.extra, classes.before])}>{before}</div>}
-      <div className={classes.main}>{children}</div>
-      {after && <div className={classNames([classes.extra, classes.after])}>{after}</div>}      
+    >
+      <div className={classes.iconContent}>{icon}</div>
     </button>
   )
 }
